@@ -16,8 +16,7 @@ import org.web3j.protocol.Web3j;
 import org.web3j.protocol.core.DefaultBlockParameter;
 import org.web3j.protocol.core.methods.response.EthGetTransactionReceipt;
 import org.web3j.protocol.core.methods.response.EthSendTransaction;
-import org.web3j.protocol.core.methods.response.EthTransaction;
-import org.web3j.protocol.core.methods.response.Transaction;
+
 import org.web3j.protocol.http.HttpService;
 import org.web3j.utils.Numeric;
 
@@ -71,7 +70,7 @@ public class Main {
 
             // Public key
             ByteArrayOutputStream pub = new ByteArrayOutputStream( );
-            //pub.write(zero);
+            pub.write(zero);
             pub.write(skparam.getPublicKey());
 
             System.out.println("sigGenerated :" + org.bouncycastle.util.encoders.Hex.toHexString( sigGenerated));
@@ -81,7 +80,7 @@ public class Main {
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////
             // Parameters
 
-            byte[] msgFake = Strings.toByteArray("fake");
+           // byte[] msgFake = Strings.toByteArray("fake");
 
             // Encode the method and parameters to send to the contract
             Function function = new Function(
